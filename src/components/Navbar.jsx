@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
+  const [isHovered4, setIsHovered4] = useState(false);
  
   return (
     <div  className="px-5 max-w-[1280px] mx-auto  ">
@@ -131,38 +132,85 @@ const Navbar = () => {
     <div
       className={`md:hidden ${
         showNav
-          ? "pb-4 px-5 bg-slate-300 rounded-lg "
+          ? "pb-4  rounded-lg "
           : "h-0 invisible opacity-0"
       }`}
     >
-      <ul className="flex flex-col text-[15px] opacity-75 px-2 ">
-        <li>
-          <Link to="/" className="py-3 inline-block w-full ">
-            Feature
-          </Link>
+      <ul className="flex flex-col text-[15px] opacity-100 ">
+      <li onClick={() => setIsHovered(!isHovered)} className=" pt-3 " >
+            <Link to="/" className={`${isHovered && " text-blue-500  rounded-full"} py-2 inline-block w-full`}>
+                <span className={` flex flex-row gap-1 font-semibold `}>
+                Use Cases
+                    <IoIosArrowDown className={`transition-transform transform mt-1 text-blue-500 ${isHovered ? ' duration-300 rotate-180' : ' duration-300 rotate-0'}`} size={20} />
+                </span> 
+            </Link>
+            {/* Nested Menu */}
+            <div onMouseEnter={() => setIsHovered(true)} className={`absolute  flex items-center z-[2] pt-2  ${
+                isHovered ? "" : "hidden"
+              }`}>
+ {isHovered && (
+                <ul className=" rounded-3xl shadow-lg py-6 px-6 bg-white text-black flex flex-col gap-2 ">
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Sales Outreach</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Product Marketing</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Content Marketing</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Learning & Development</Link></li>
+            </ul>
+            )}
+            </div>
+           
         </li>
-        <li>
-          <Link to="/addProduct" className="py-3 inline-block w-full ">
-            Add Product
-          </Link>
+        <li onClick={() => setIsHovered2(!isHovered2)} className=" " >
+            <Link to="/" className={`${isHovered2 && " text-blue-500  rounded-full"} py-2 inline-block w-full`}>
+                <span className={` flex flex-row gap-1 font-semibold `}>
+                Features
+                    <IoIosArrowDown className={`transition-transform transform mt-1 text-blue-500 ${isHovered2 ? ' duration-300 rotate-180' : ' duration-300 rotate-0'}`} size={20} />
+                </span> 
+            </Link>
+            {/* Nested Menu */}
+            <div  className={`absolute  flex items-center z-[2] pt-2  ${
+                isHovered2 ? "" : "hidden"
+              }`}>
+ {isHovered2 && (
+                <ul className=" rounded-3xl shadow-lg py-6 px-6 bg-white text-black flex flex-col gap-2 ">
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Sales Outreach</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Product Marketing</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Content Marketing</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Learning & Development</Link></li>
+            </ul>
+            )}
+            </div>
+           
         </li>
-        <li>
-          <Link to="/" className="py-3 inline-block w-full ">
-            My Profile
-          </Link>
+        <li onClick={() => setIsHovered3(!isHovered3)} className=" " >
+            <Link to="/" className={`${isHovered3 && " text-blue-500  rounded-full"} py-2 inline-block w-full`}>
+                <span className={` flex flex-row gap-1 font-semibold `}>
+                Resources
+                    <IoIosArrowDown className={`transition-transform transform mt-1 text-blue-500 ${isHovered3 ? ' duration-300 rotate-180' : ' duration-300 rotate-0'}`} size={20} />
+                </span> 
+            </Link>
+            {/* Nested Menu */}
+            <div  className={`absolute  flex items-center z-[2] pt-2  ${
+                isHovered3 ? "" : "hidden"
+              }`}>
+ {isHovered3 && (
+                <ul className=" rounded-3xl shadow-lg py-6 px-6 bg-white text-black flex flex-col gap-2 ">
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Sales Outreach</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Product Marketing</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Content Marketing</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Learning & Development</Link></li>
+            </ul>
+            )}
+            </div>
+           
+        </li>
+        <li onClick={() => setIsHovered4(!isHovered4)} className="" >
+            <Link to="/" className={`${isHovered4 && " text-blue-500  rounded-full"} py-1 inline-block w-full`}>
+                <span className={` flex flex-row gap-1 font-semibold `}>pricing</span> 
+            </Link>
+           
         </li>
       </ul>
-      <div className="flex items-center bg-gray-100 p-2 rounded-lg my-4 py-3">
-        <input
-          type="text"
-          className="outline-none w-full bg-transparent ml-2 caret-blue-500 placeholder:font-light placeholder:text-gray-600 text-[15px]"
-          placeholder="Search"
-          autoComplete="false"
-        />
-        <button> <p>CiSearch</p>
-          {/* <CiSearch size={20} className="opacity-50" /> */}
-        </button>
-      </div>
+      
     </div>
   </div>
   )

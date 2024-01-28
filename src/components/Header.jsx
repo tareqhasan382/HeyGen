@@ -1,5 +1,8 @@
 import { IoMdArrowRoundForward } from "react-icons/io";
+import { Typewriter } from 'react-simple-typewriter'
 import ImageCard from "./ImageCard";
+import CompanyLogo from "./CompanyLogo";
+import ImageSlide from "./ImageSlide";
 const Header = () => {
   return (
     <div className=" mt-20 mb-10 flex flex-col items-center justify-center ">
@@ -11,14 +14,7 @@ const Header = () => {
       <button className=" max-md:hidden flex items-center justify-center text-center text-xl px-5 py-3 bg-[#5636f3] hover:bg-[#7559ff] text-white duration-200 rounded-2xl ">Get started for free <IoMdArrowRoundForward className=" ml-2 mt-1 " /></button>
       <button className="md:hidden flex items-center justify-center text-center text-xl px-5 py-3 bg-[#5636f3] hover:bg-[#7559ff] text-white duration-200 rounded-2xl ">Try Demo <IoMdArrowRoundForward className="ml-2 mt-1" /></button>
       <span className=" text-sm">No credit card needed</span>
-      <div className=" h-32 lg:w-[70%] w-full lg:mt-5 flex flex-row items-center gap-4 bg-[#e0e3e6] opacity-45 overflow-hidden  ">
-        <img className=" lg:h-14 lg:w-36 h-10 w-14 " src="https://logolook.net/wp-content/uploads/2021/06/Amazon-Logo.png" alt="logo" />
-        <img className=" lg:h-14 lg:w-36 h-10 w-14" src="http://4.bp.blogspot.com/-IV4DhDR_rMQ/U8ZL-jsptZI/AAAAAAAAC2M/dJ6PjZAy3gQ/s1600/Logo+KPMG.png" alt="logo" />
-        <img className=" lg:h-14 lg:w-36 h-10 w-14 " src="https://mma.prnewswire.com/media/965870/Pattern_Logo.jpg?p=facebook" alt="logo" />
-        <img className=" lg:h-14 lg:w-36 h-10 w-14 " src="https://logos-world.net/wp-content/uploads/2020/11/Nvidia-Logo.png" alt="logo" />
-        <img className=" lg:h-14 lg:w-36 h-10 w-14" src="https://logosmarcas.net/wp-content/uploads/2020/06/Accenture-Logo.png" alt="logo" />
-        <img className=" lg:h-14 lg:w-36 h-10 w-14" src="https://1000logos.net/wp-content/uploads/2020/03/Volvo-Logo-1959.png" alt="logo" />
-      </div>
+      <CompanyLogo/>
       <div className=" lg:relative lg:mt-20 mt-5 ">
         <div className=" lg:absolute lg:w-[300px] w-full p-5 rounded-2xl z-10 bg-white lg:top-20 mb-5 ">
           <div className=" flex flex-row items-center gap-2 py-2 " >
@@ -28,10 +24,22 @@ const Header = () => {
            
           </div>
           <h3 className=" text-blue-500 py-2 " >Script</h3>
-          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication,</p>
+          <p>
+          <Typewriter
+                    loop
+                    cursor
+                    cursorStyle='|'
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={120}
+                    words={["In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. "]}
+               / >
+                   
+          </p>
         </div>
       <div className=" relative lg:ml-40  ">
-        <img className=" shadow-lg lg:h-[300px] lg:w-[600px] rounded-md object " src="https://media.istockphoto.com/id/1460755337/photo/white-color-theme-modern-style-office-with-exposed-concrete-floor-and-a-lot-of-plant-3d.jpg?s=2048x2048&w=is&k=20&c=tWDM7wTEi9dTlYi-HRxj_d76rUSp9N45pP9oMrnDIeY=" />
+        {/* <img className=" shadow-lg lg:h-[300px] lg:w-[600px] rounded-md object " src="https://media.istockphoto.com/id/1460755337/photo/white-color-theme-modern-style-office-with-exposed-concrete-floor-and-a-lot-of-plant-3d.jpg?s=2048x2048&w=is&k=20&c=tWDM7wTEi9dTlYi-HRxj_d76rUSp9N45pP9oMrnDIeY=" /> */}
+        <iframe className="shadow-lg lg:h-[300px] lg:w-[600px] rounded-md object-contain"  src="https://www.youtube.com/embed/yu_x8qv6mfA?si=zrSNpQysIXf_kAbG&amp;start=7" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
         <button className=" absolute top-4 left-4 flex items-center justify-center text-center text-xl px-5 py-3 bg-gray-200  hover:bg-[#7559ff] hover:text-white duration-200 rounded-2xl ">Demo</button> 
       </div>
       </div>
@@ -55,7 +63,10 @@ const Header = () => {
 {/* ===============image card end======= */}
          </div>
          {/* ===============image======= */}
+         <ImageSlide/>
+         
       </div>
+      
     </div>
   )
 }
