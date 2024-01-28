@@ -34,7 +34,7 @@ const Navbar = () => {
                 isHovered ? "" : "hidden"
               }`}>
  {isHovered && (
-                <ul className=" bg-white rounded-3xl shadow-lg py-6 px-6 bg-white text-black flex flex-col gap-2 ">
+                <ul className=" rounded-3xl shadow-lg py-6 px-6 bg-white text-black flex flex-col gap-2 ">
                 <li className=" hover:text-blue-500 duration-150 "><Link to="/">Sales Outreach</Link></li>
                 <li className=" hover:text-blue-500 duration-150 "><Link to="/">Product Marketing</Link></li>
                 <li className=" hover:text-blue-500 duration-150 "><Link to="/">Content Marketing</Link></li>
@@ -44,8 +44,8 @@ const Navbar = () => {
             </div>
            
         </li>
-           
-            <li onMouseEnter={() => setIsHovered2(true)} onMouseLeave={() => setIsHovered2(false)}>
+        {/* Feature  Resources */}
+        <li onMouseEnter={() => setIsHovered2(true)} onMouseLeave={() => setIsHovered2(false)}>
             <Link to="/" className={`${isHovered2 && " bg-[#eef2f6f0] text-blue-500  rounded-full"} py-2 px-3 inline-block w-full`}>
                 <span className={` flex flex-row items-center justify-center gap-1`}>
                 Feature
@@ -53,38 +53,37 @@ const Navbar = () => {
                 </span> 
             </Link>
             {/* Nested Menu */}
-            <div  className={`absolute bg-white flex items-center z-[2] rounded-3xl mt-2 p-3 shadow-lg ${
+            <div onMouseEnter={() => setIsHovered2(true)} className={`absolute  flex items-center z-[2] pt-2  ${
                 isHovered2 ? "" : "hidden"
               }`}>
  {isHovered2 && (
-                <ul className=" py-2 px-4 bg-white text-black flex flex-col gap-2 ">
-                    <li className=" hover:text-blue-500 duration-150 "><Link to="/">Sales Outreach</Link></li>
-                    <li className=" hover:text-blue-500 duration-150 "><Link to="/">Product Marketing</Link></li>
-                    <li className=" hover:text-blue-500 duration-150 "><Link to="/">Content Marketing</Link></li>
-                    <li className=" hover:text-blue-500 duration-150 "><Link to="/">Learning & Development</Link></li>
-                </ul>
+                <ul className=" rounded-3xl shadow-lg py-6 px-6 bg-white text-black flex flex-col gap-2 ">
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Sales Outreach</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Product Marketing</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Content Marketing</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Learning & Development</Link></li>
+            </ul>
             )}
             </div>
            
         </li>
         <li onMouseEnter={() => setIsHovered3(true)} onMouseLeave={() => setIsHovered3(false)}>
-            <Link to="/" className={`${isHovered3 && " bg-[#eef2f6f0] text-blue-500 rounded-full"} py-2 px-3 inline-block w-full`}>
+            <Link to="/" className={`${isHovered3 && " bg-[#eef2f6f0] text-blue-500  rounded-full"} py-2 px-3 inline-block w-full`}>
                 <span className={` flex flex-row items-center justify-center gap-1`}>
-                Resources
-                    <IoIosArrowDown className={`transition-transform transform text-blue-500 ${isHovered3 ? ' duration-300 rotate-180' : ' duration-300 rotate-0'}`} size={20} />
+                Resources                    <IoIosArrowDown className={`transition-transform transform text-blue-500 ${isHovered3 ? ' duration-300 rotate-180' : ' duration-300 rotate-0'}`} size={20} />
                 </span> 
             </Link>
             {/* Nested Menu */}
-            <div  className={`absolute bg-white flex items-center z-[2] rounded-3xl mt-2 p-3 shadow-lg ${
+            <div onMouseEnter={() => setIsHovered3(true)} className={`absolute  flex items-center z-[2] pt-2  ${
                 isHovered3 ? "" : "hidden"
               }`}>
  {isHovered3 && (
-                <ul className=" py-2 px-4 bg-white text-black flex flex-col gap-2 ">
-                    <li className=" hover:text-blue-500 duration-150 "><Link to="/">Sales Outreach</Link></li>
-                    <li className=" hover:text-blue-500 duration-150 "><Link to="/">Product Marketing</Link></li>
-                    <li className=" hover:text-blue-500 duration-150 "><Link to="/">Content Marketing</Link></li>
-                    <li className=" hover:text-blue-500 duration-150 "><Link to="/">Learning & Development</Link></li>
-                </ul>
+                <ul className=" rounded-3xl shadow-lg py-6 px-6 bg-white text-black flex flex-col gap-2 ">
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Sales Outreach</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Product Marketing</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Content Marketing</Link></li>
+                <li className=" hover:text-blue-500 duration-150 "><Link to="/">Learning & Development</Link></li>
+            </ul>
             )}
             </div>
            
